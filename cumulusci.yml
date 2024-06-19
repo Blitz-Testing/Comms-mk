@@ -1,0 +1,28 @@
+minimum_cumulusci_version: '3.88.0'
+project:
+    name: Comms-mk
+    package:
+        name: Comms-mk
+        api_version: '61.0'
+    git:
+        default_branch: 'main'
+        prefix_feature: 'feature/'
+        prefix_beta: 'beta/'
+        prefix_release: 'release/'
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/Comms-mk/tests
+            options:
+                outputdir: robot/Comms-mk/results
+
+    robot_testdoc:
+        options:
+            path: robot/Comms-mk/tests
+            output: robot/Comms-mk/doc/Comms-mk_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
